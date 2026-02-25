@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-02-25T15:58:33.785Z",
-  "total_pages": 239,
+  "generated_at": "2026-02-25T16:02:05.811Z",
+  "total_pages": 246,
   "type_counts": {
-    "blog": 38,
+    "blog": 42,
     "budget-tier": 5,
     "gift-guide": 5,
     "persona-kit": 5,
-    "experience": 41,
+    "experience": 44,
     "guide": 37,
     "localization": 19,
     "comparison": 10,
@@ -746,6 +746,29 @@
       "source_file": "content/blog/how-to/why-your-grinder-matters-more-than-your-machine.json"
     },
     {
+      "id": "altitude-and-espresso",
+      "slug": "/blog/travel/altitude-and-espresso",
+      "title": "Altitude and Espresso: The Science of Brewing at Elevation",
+      "type": "blog",
+      "persona_tags": [
+        "traveller",
+        "craft-barista"
+      ],
+      "intent_tags": [
+        "research",
+        "own"
+      ],
+      "format": "travel",
+      "market": "en",
+      "difficulty": null,
+      "hero_image_alt": "A portable espresso setup on a wooden table at a mountain chalet, snow-capped peaks visible through a panoramic window, steam rising from a freshly pulled shot catching the cold mountain light, a thermometer showing the water temperature, rugged outdoor gear and a backpack visible in the corner",
+      "related_products": [
+        "arco-viaggio"
+      ],
+      "related_experience": "morning-minimalist",
+      "source_file": "content/blog/travel/altitude-and-espresso.json"
+    },
+    {
       "id": "coffee-culture-in-vienna",
       "slug": "/blog/travel/coffee-culture-in-vienna",
       "title": "Coffee Culture in Vienna: The Kaffeehaus Tradition and What It Means Today",
@@ -796,6 +819,25 @@
       ],
       "related_experience": "morning-minimalist",
       "source_file": "content/blog/travel/espresso-bars-worth-visiting-in-milan.json"
+    },
+    {
+      "id": "guide-to-coffee-in-tokyo",
+      "slug": "/blog/travel/guide-to-coffee-in-tokyo",
+      "title": "Guide to Coffee in Tokyo: Precision, Ritual, and the Third Wave",
+      "type": "blog",
+      "persona_tags": [
+        "craft-barista"
+      ],
+      "intent_tags": [
+        "discover"
+      ],
+      "format": "travel",
+      "market": "en",
+      "difficulty": null,
+      "hero_image_alt": "A Japanese barista in a crisp white shirt performing a slow, precise pour-over behind a beautifully lit counter in a minimalist Tokyo kissaten, copper kettle poised above a ceramic dripper, a row of siphon brewers visible on a wooden shelf behind, soft warm lighting against dark wood paneling",
+      "related_products": [],
+      "related_experience": "morning-minimalist",
+      "source_file": "content/blog/travel/guide-to-coffee-in-tokyo.json"
     },
     {
       "id": "lisbon-coffee-renaissance",
@@ -875,6 +917,45 @@
       ],
       "related_experience": "craft-barista",
       "source_file": "content/blog/travel/scandinavian-light-roast-revolution.json"
+    },
+    {
+      "id": "specialty-coffee-in-new-york-for-europeans",
+      "slug": "/blog/travel/specialty-coffee-in-new-york-for-europeans",
+      "title": "Specialty Coffee in New York for Europeans: What to Expect and Where to Go",
+      "type": "blog",
+      "persona_tags": [
+        "traveller",
+        "craft-barista"
+      ],
+      "intent_tags": [
+        "discover"
+      ],
+      "format": "travel",
+      "market": "en",
+      "difficulty": null,
+      "hero_image_alt": "A wide shot of a busy New York specialty coffee shop with exposed brick walls and large sash windows, customers sitting at communal wooden tables with laptops and ceramic cups, a barista working at a La Marzocca behind a marble counter, morning light cutting through the windows in dramatic shafts, energetic urban atmosphere",
+      "related_products": [],
+      "related_experience": "morning-minimalist",
+      "source_file": "content/blog/travel/specialty-coffee-in-new-york-for-europeans.json"
+    },
+    {
+      "id": "the-best-cafes-in-lisbon",
+      "slug": "/blog/travel/the-best-cafes-in-lisbon",
+      "title": "The Best Cafes in Lisbon: Specialty Coffee in a Traditional City",
+      "type": "blog",
+      "persona_tags": [
+        "traveller"
+      ],
+      "intent_tags": [
+        "discover"
+      ],
+      "format": "travel",
+      "market": "en",
+      "difficulty": null,
+      "hero_image_alt": "A tiled exterior of a Lisbon cafe with traditional blue azulejo tiles surrounding the doorway, a modern espresso setup visible through the open door, sunlight casting sharp shadows on the cobblestone street, a small outdoor table with a white ceramic cup and a pastel de nata on a plate",
+      "related_products": [],
+      "related_experience": "morning-minimalist",
+      "source_file": "content/blog/travel/the-best-cafes-in-lisbon.json"
     },
     {
       "id": "the-espresso-trail-naples-to-turin",
@@ -1408,6 +1489,85 @@
       "related_products": [],
       "related_experience": null,
       "source_file": "content/experiences/cultural/italian-espresso-culture.json"
+    },
+    {
+      "id": "exp-cu-004",
+      "slug": "/experiences/cultural/precision-coffee-germany",
+      "title": "Precision Coffee Germany",
+      "type": "experience",
+      "persona_tags": [
+        "engineering-mindset",
+        "data-driven",
+        "precision-focused"
+      ],
+      "intent_tags": [
+        "german",
+        "precision",
+        "engineering",
+        "data",
+        "advanced",
+        "culture",
+        "market-de"
+      ],
+      "format": "experience",
+      "market": "en",
+      "difficulty": null,
+      "hero_image_alt": "A meticulously organised home coffee station in a German kitchen, an Arco Studio Pro with a digital scale and refractometer beside it, a notebook with extraction data open on the counter, precise measurements visible, clean Bauhaus-inspired interior design",
+      "related_products": [],
+      "related_experience": null,
+      "source_file": "content/experiences/cultural/precision-coffee-germany.json"
+    },
+    {
+      "id": "exp-cu-002",
+      "slug": "/experiences/cultural/scandinavian-filter-tradition",
+      "title": "Scandinavian Filter Tradition",
+      "type": "experience",
+      "persona_tags": [
+        "nordic-filter",
+        "light-roast",
+        "filter-purist"
+      ],
+      "intent_tags": [
+        "scandinavian",
+        "filter",
+        "light-roast",
+        "nordic",
+        "culture",
+        "market-en-de"
+      ],
+      "format": "experience",
+      "market": "en",
+      "difficulty": null,
+      "hero_image_alt": "A minimalist Scandinavian kitchen with pale wood surfaces and large windows overlooking a snow-covered landscape, an Arco Filtro brewing light golden coffee into a glass carafe, a simple ceramic cup and saucer waiting beside it, clean lines and natural light everywhere",
+      "related_products": [],
+      "related_experience": null,
+      "source_file": "content/experiences/cultural/scandinavian-filter-tradition.json"
+    },
+    {
+      "id": "exp-cu-003",
+      "slug": "/experiences/cultural/third-wave-uk",
+      "title": "Third Wave UK",
+      "type": "experience",
+      "persona_tags": [
+        "specialty-enthusiast",
+        "third-wave",
+        "uk-market"
+      ],
+      "intent_tags": [
+        "uk",
+        "specialty",
+        "third-wave",
+        "flat-white",
+        "culture",
+        "market-en"
+      ],
+      "format": "experience",
+      "market": "en",
+      "difficulty": null,
+      "hero_image_alt": "A specialty coffee shop in London with exposed brick and industrial lighting, a barista pulling espresso on a commercial machine, bags of single-origin beans from UK roasters on a shelf, a chalkboard menu listing origins and processing methods, a diverse crowd of customers",
+      "related_products": [],
+      "related_experience": null,
+      "source_file": "content/experiences/cultural/third-wave-uk.json"
     },
     {
       "id": "exp-hs-002",
