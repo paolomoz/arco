@@ -1,7 +1,10 @@
 .*
 *.md
+*.ts
 karma.config.js
 LICENSE
 package.json
 package-lock.json
 test/*
+tools/*
+drafts/*

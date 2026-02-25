@@ -1,20 +1,99 @@
+/* Footer — warm surface, multi-column layout, editorial style */
 footer {
-  background-color: var(--light-color);
+  background-color: var(--text-color);
   font-size: var(--body-font-size-xs);
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 64px 24px 32px;
 }
 
 footer .footer p {
   margin: 0;
+  color: rgb(255 255 255 / 60%);
+  line-height: 1.7;
+}
+
+footer .footer a:any-link {
+  color: rgb(255 255 255 / 60%);
+  transition: color var(--transition);
+}
+
+footer .footer a:hover {
+  color: var(--accent-secondary);
+}
+
+footer .footer h2,
+footer .footer h3,
+footer .footer h4,
+footer .footer h5 {
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: var(--body-font-size-xs);
+  color: var(--light-color);
+  margin-top: 0;
+}
+
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer ul li {
+  padding: 4px 0;
+}
+
+/* Newsletter section */
+footer .footer .footer-newsletter {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+}
+
+footer .footer .footer-newsletter h2 {
+  font-size: var(--heading-font-size-m);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  margin-bottom: 8px;
+}
+
+footer .footer .footer-newsletter p {
+  font-size: var(--body-font-size-s);
+}
+
+/* Link columns */
+footer .footer .footer-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+}
+
+/* Copyright */
+footer .footer .footer-copyright p {
+  font-size: 13px;
+  color: rgb(255 255 255 / 40%);
+}
+
+@media (width >= 600px) {
+  footer .footer .footer-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 80px 32px 40px;
+  }
+
+  footer .footer .footer-newsletter {
+    max-width: 480px;
   }
 }

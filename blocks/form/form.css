@@ -1,0 +1,249 @@
+/* Form — warm rounded inputs, accent focus, pill submit */
+.form [aria-hidden='true'] {
+  display: none;
+}
+
+.form input,
+.form textarea,
+.form select,
+.form button {
+  box-sizing: border-box;
+  display: block;
+  max-width: 100%;
+  font: inherit;
+}
+
+.form input,
+.form textarea,
+.form select {
+  scroll-margin: 1em;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 0.65em 1em;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form fieldset {
+  appearance: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.form input:hover,
+.form textarea:hover,
+.form select:hover {
+  border-color: var(--accent-secondary);
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgb(139 115 85 / 12%);
+}
+
+.form button:focus {
+  outline-offset: 4px;
+}
+
+.form input:disabled,
+.form input:hover:disabled,
+.form input:focus:disabled,
+.form textarea:disabled,
+.form textarea:hover:disabled,
+.form textarea:focus:disabled,
+.form select:disabled,
+.form select:hover:disabled,
+.form select:focus:disabled,
+.form input[readonly],
+.form textarea[readonly],
+.form select[readonly] {
+  border-color: var(--border-color);
+  background-color: var(--background-color);
+  color: var(--dark-color);
+}
+
+.form input[readonly]:focus,
+.form textarea[readonly]:focus,
+.form select[readonly]:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.form input[type='checkbox'],
+.form input[type='radio'] {
+  width: unset;
+}
+
+.form label,
+.form legend {
+  display: block;
+  font-family: var(--body-font-family);
+  font-weight: 600;
+}
+
+.form label[data-required]::after,
+.form legend[data-required]::after {
+  content: '*';
+  margin-left: 0.25ch;
+  color: var(--accent-secondary);
+}
+
+.form .form-field > label:first-child,
+.form .form-field > legend {
+  font-weight: 700;
+}
+
+.form .form-field + .form-field {
+  margin-top: 1.25em;
+}
+
+.form .form-field.checkbox-field label,
+.form .form-field.radio-field label {
+  position: relative;
+  padding-left: calc(1em + 1ch);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 44px;
+  cursor: pointer;
+}
+
+.form .form-field.checkbox-field label input,
+.form .form-field.radio-field label input,
+.form .form-field.toggle-field label input {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin: 0;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+
+.form .form-field.checkbox-field label input:disabled,
+.form .form-field.radio-field label input:disabled {
+  cursor: default;
+}
+
+@media (width >= 600px) {
+  .form .form-field.checkbox-field,
+  .form .form-field.radio-field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25ch 1em;
+  }
+}
+
+/* custom toggle field */
+.form .form-field.toggle-field label {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1ch;
+  min-height: 44px;
+  font-weight: 400;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.form .form-field.toggle-field label input {
+  width: 2em;
+  opacity: 0;
+  border-radius: 50%;
+}
+
+.form .form-field.toggle-field label span {
+  position: relative;
+  width: calc(2em + (2 * 1px));
+  height: calc(1em + (2 * 1px));
+  border-radius: 1em;
+  border: 1px solid var(--border-color);
+  background-color: var(--border-color);
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.form .form-field.toggle-field label span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  transition: left 0.2s;
+}
+
+.form .form-field.toggle-field label input:checked + span {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.form .form-field.toggle-field label input:checked + span::after {
+  left: calc(100% - 1em);
+}
+
+.form .form-field.toggle-field label input:disabled + span {
+  border-color: var(--border-color);
+  background-color: var(--background-color);
+  cursor: default;
+}
+
+.form .form-field.toggle-field label input:disabled + span::after {
+  background-color: var(--border-color);
+}
+
+.form .field-help-text {
+  margin-top: 0.2em;
+  color: var(--muted-color);
+  font-size: var(--body-font-size-xs);
+}
+
+.form .button-wrapper {
+  margin-top: 1.5em;
+}
+
+.form .button-wrapper button {
+  width: 100%;
+}
+
+.form .button-wrapper button.button:disabled,
+.form .button-wrapper button.button:hover:disabled {
+  border-color: var(--border-color);
+  background-color: var(--border-color);
+  color: var(--muted-color);
+  cursor: progress;
+}
+
+.form .button-wrapper button.button.secondary:disabled,
+.form .button-wrapper button.button.secondary:hover:disabled {
+  border-color: var(--border-color);
+  background-color: var(--background-color);
+  color: var(--dark-color);
+}
+
+@media (width >= 600px) {
+  .form .button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1ch;
+  }
+
+  .form .button-wrapper button {
+    width: max-content;
+  }
+}

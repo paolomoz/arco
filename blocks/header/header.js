@@ -109,6 +109,45 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ * Splits a single nav section into brand/sections/tools divs.
+ * Needed when the content pipeline merges all nav content into one section.
+ * @param {Element} nav The nav element
+ */
+function splitNavSections(nav) {
+  const single = nav.children[0];
+  const wrapper = single.querySelector('.default-content-wrapper') || single;
+
+  const makeSection = () => {
+    const div = document.createElement('div');
+    const wrap = document.createElement('div');
+    wrap.className = 'default-content-wrapper';
+    div.appendChild(wrap);
+    return div;
+  };
+
+  const brandDiv = makeSection();
+  const sectionsDiv = makeSection();
+  const toolsDiv = makeSection();
+  const brandWrap = brandDiv.firstElementChild;
+  const sectionsWrap = sectionsDiv.firstElementChild;
+  const toolsWrap = toolsDiv.firstElementChild;
+
+  let foundUl = false;
+  [...wrapper.children].forEach((el) => {
+    if (el.tagName === 'UL') {
+      foundUl = true;
+      sectionsWrap.appendChild(el);
+    } else if (foundUl) {
+      toolsWrap.appendChild(el);
+    } else {
+      brandWrap.appendChild(el);
+    }
+  });
+
+  single.replaceWith(brandDiv, sectionsDiv, toolsDiv);
+}
+
+/**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
@@ -124,6 +163,11 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
+  // If only one section, split content into brand/sections/tools
+  if (nav.children.length === 1) {
+    splitNavSections(nav);
+  }
+
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
@@ -131,14 +175,23 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  if (navBrand) {
+    const brandLink = navBrand.querySelector('.button');
+    if (brandLink) {
+      brandLink.className = '';
+      brandLink.closest('.button-container').className = '';
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
+    // Strip button classes from nav section links
+    navSections.querySelectorAll('li .button').forEach((btn) => {
+      btn.classList.remove('button');
+      const container = btn.closest('.button-container');
+      if (container) container.classList.remove('button-container');
+    });
+
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {

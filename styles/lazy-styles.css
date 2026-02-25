@@ -1,1 +1,18 @@
 /* add global styles that can be loaded post LCP here */
+
+/* smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* selection color */
+::selection {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+/* focus visible styles */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}

@@ -1,6 +1,8 @@
-/* header and nav layout */
+/* Header — warm backdrop-blur, serif brand, uppercase nav, pill CTA */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: rgb(245 240 232 / 90%);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -28,6 +30,7 @@ header nav[aria-expanded='true'] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
+  background-color: var(--background-color);
 }
 
 @media (width >= 900px) {
@@ -38,7 +41,7 @@ header nav[aria-expanded='true'] {
   header nav {
     display: flex;
     justify-content: space-between;
-    gap: 0 32px;
+    gap: 0 40px;
     max-width: 1264px;
     padding: 0 32px;
   }
@@ -46,6 +49,7 @@ header nav[aria-expanded='true'] {
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
+    background-color: transparent;
   }
 }
 
@@ -55,7 +59,17 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color var(--transition);
+}
+
+header nav a:hover {
+  color: var(--accent-color);
 }
 
 /* hamburger */
@@ -72,11 +86,18 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: transparent;
   color: inherit;
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+  box-shadow: none;
+}
+
+header nav .nav-hamburger button:hover {
+  background-color: transparent;
+  transform: none;
+  box-shadow: none;
 }
 
 header nav .nav-hamburger-icon,
@@ -98,7 +119,7 @@ header nav .nav-hamburger-icon::after {
 header nav[aria-expanded='false'] .nav-hamburger-icon,
 header nav[aria-expanded='false'] .nav-hamburger-icon::before,
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
+  height: 1.5px;
   border-radius: 2px;
   background: currentcolor;
 }
@@ -122,7 +143,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(45deg);
   transform-origin: 2px 1px;
   width: 24px;
-  height: 2px;
+  height: 1.5px;
   border-radius: 2px;
 }
 
@@ -143,9 +164,11 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
+  font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  color: var(--accent-color);
 }
 
 header nav .nav-brand img {
@@ -170,7 +193,7 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-xs);
 }
 
 header nav .nav-sections ul > li {
@@ -209,11 +232,12 @@ header nav .nav-sections ul > li > ul > li {
     top: 0.5em;
     right: 2px;
     transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
+    width: 5px;
+    height: 5px;
+    border: 1.5px solid currentcolor;
     border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
+    border-width: 1.5px 1.5px 0 0;
+    transition: transform var(--transition);
   }
 
   header nav .nav-sections .nav-drop[aria-expanded='true']::after {
@@ -224,7 +248,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 24px;
+    gap: 32px;
     margin: 0;
   }
 
@@ -246,19 +270,14 @@ header nav .nav-sections ul > li > ul > li {
     top: 150%;
     padding: 16px;
     background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
     white-space: initial;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    display: none;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
@@ -266,7 +285,23 @@ header nav .nav-sections ul > li > ul > li {
   }
 }
 
-/* tools */
+/* tools — pill CTA */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-tools a.button:any-link {
+  margin: 0;
+  padding: 0.5em 1.8em;
+  font-size: var(--body-font-size-xs);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--light-color);
+  box-shadow: var(--shadow-md);
+}
+
+header nav .nav-tools a.button:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+  transform: scale(1.05);
 }
